@@ -16,6 +16,9 @@ public class Project_App {
     public static void main(String[] args) throws SQLException {
         Factory factory = Factory.getInstanse();
         UserDao userDao = factory.getUserDao();
+        MealDao mealDao = factory.getMealDao();
+        OrderDao orderDao  = factory.getOrderDao();
+
 
         User user = new User();
         user.setFirstName("Krill");
@@ -26,24 +29,21 @@ public class Project_App {
         user.setStatus("admin");
         userDao.add(user);
 
-        MealDao mealDao = new MealDao();
         Meal meal = new Meal();
         meal.setMealName("meal_1");
-        meal.setMealPrice(100);
-        meal.setMealTime(100);
+        meal.setMealPrice(200);
+        meal.setMealTime(200);
         meal.setMealConsist("Test hibernate mapping");
         mealDao.add(meal);
 
-
-        OrderDao orderDao = new OrderDao();
         Order order = new Order();
-        order.setMealId(1);
         order.setOrderId(1);
+        order.setMealId(1);
         order.setUserId(1);
         orderDao.add(order);
 
 //        List<User> users = userDao.getAll();
-//        System.out.print("User DB have fields:");
+       System.out.print("User DB have fields:");
 //
 //        for (User userlist : users) {
 //            userlist.getId();

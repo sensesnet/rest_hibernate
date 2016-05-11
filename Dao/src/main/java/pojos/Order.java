@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity                   //  annotation describe DB table how javaclass
 @Table(name = "Order")       //  table name
+
 public class Order {
     @Id
     @Column(name = "id")      //autoincrement identify explicitly column
