@@ -30,11 +30,11 @@
         <!--mapping resource="Meal.hbm.xml"/-->
         <mapping class="pojos.Meal"/>
 
-        <mapping resource="Order.hbm.xml"/>
-        <!--mapping class="pojos.Order"/-->
+        <!--mapping resource="Order.hbm.xml"/-->
+        <mapping class="pojos.Order"/>
 
         <!--mapping resource="OrderStatus.hbm.xml"/-->
-        <mapping class="pojos.OrderStatus"/>
+        <!--mapping class="pojos.OrderStatus"/-->
 
     </session-factory>
 </hibernate-configuration>

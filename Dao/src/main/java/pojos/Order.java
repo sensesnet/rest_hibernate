@@ -13,10 +13,12 @@ public class Order {
     @Column(name = "id")      //autoincrement identify explicitly column
     @GeneratedValue(strategy = GenerationType.AUTO)  // value autogenerate
     private int id;
+    @Column(name = "orderId")
+    private int orderId;
     @Column(name = "mealId")
-    private String mealId;
+    private int mealId;
     @Column(name = "userId")
-    private String userId;
+    private int userId;
 
     public int getId() {
         return id;
@@ -26,19 +28,27 @@ public class Order {
         this.id = id;
     }
 
-    public String getMealId() {
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public int getMealId() {
         return mealId;
     }
 
-    public void setMealId(String mealId) {
+    public void setMealId(int mealId) {
         this.mealId = mealId;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 }

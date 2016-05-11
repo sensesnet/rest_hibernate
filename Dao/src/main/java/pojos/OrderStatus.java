@@ -7,11 +7,11 @@ import javax.persistence.UniqueConstraint;
 /**
  * Created by KIRILL on 08.05.2016.
  */
-@Entity                   //  annotation describe DB table how javaclass
-@Table(name = "OrderStatus",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "orderId")
-        })      //  table name and uniqueValue of "id"
+//@Entity                   //  annotation describe DB table how javaclass
+//@Table(name = "OrderStatus",
+//        uniqueConstraints = {
+//                @UniqueConstraint(columnNames = "orderId")
+//        })      //  table name and uniqueValue of "id"
 
 public class OrderStatus {
 

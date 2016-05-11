@@ -1,6 +1,8 @@
 import Dao.MealDao;
+import Dao.OrderDao;
 import Dao.UserDao;
 import pojos.Meal;
+import pojos.Order;
 import pojos.User;
 
 import java.sql.SQLException;
@@ -32,20 +34,28 @@ public class Project_App {
         meal.setMealConsist("Test hibernate mapping");
         mealDao.add(meal);
 
-        List<User> users = userDao.getAll();
-        System.out.print("User DB have fields:");
 
-        for (User userlist : users) {
-            userlist.getId();
-            userlist.getFirstName();
-            userlist.getSecongName();
-            userlist.getLogin();
-            userlist.getPassword();
-            userlist.getEmail();
-            userlist.getStatus();
-            System.out.print(userlist.getId() + " "
-                    + userlist.getFirstName());
-        }
+        OrderDao orderDao = new OrderDao();
+        Order order = new Order();
+        order.setMealId(1);
+        order.setOrderId(1);
+        order.setUserId(1);
+        orderDao.add(order);
+
+//        List<User> users = userDao.getAll();
+//        System.out.print("User DB have fields:");
+//
+//        for (User userlist : users) {
+//            userlist.getId();
+//            userlist.getFirstName();
+//            userlist.getSecongName();
+//            userlist.getLogin();
+//            userlist.getPassword();
+//            userlist.getEmail();
+//            userlist.getStatus();
+//            System.out.print(userlist.getId() + " "
+//                    + userlist.getFirstName());
+//        }
 
     }
 }
