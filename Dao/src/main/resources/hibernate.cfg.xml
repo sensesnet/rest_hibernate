@@ -16,7 +16,7 @@
         <property name="hibernate.connection.pool_size">10</property>
 
         <!-- Enable Hibernate's automatic session context management -->
-        <property name="current_session_context_class">thread</property>
+        <!--property name="current_session_context_class">thread</property-->
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
@@ -25,15 +25,13 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
 
         <mapping resource="User.hbm.xml"/>
+        <mapping resource="Meal.hbm.xml"/>
+        <mapping resource="Order.hbm.xml"/>
+        <mapping resource="OrderStatus.hbm.xml"/>
+
         <!--mapping class="pojos.User"/-->
-
-        <!--mapping resource="Meal.hbm.xml"/-->
-        <mapping class="pojos.Meal"/>
-
-        <!--mapping resource="Order.hbm.xml"/-->
-        <mapping class="pojos.Order"/>
-
-        <!--mapping resource="OrderStatus.hbm.xml"/-->
+        <!--mapping class="pojos.Meal"/-->
+        <!--mapping class="pojos.Order"/-->
         <!--mapping class="pojos.OrderStatus"/-->
 
     </session-factory>

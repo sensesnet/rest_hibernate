@@ -6,7 +6,7 @@ import Dao.UserDao;
  * Created by KIRILL on 09.05.2016.
  */
 public class Factory {
-    public static Factory instanse = new Factory();
+    private static Factory instanse = new Factory();
     public UserDao userDao;
     public MealDao mealDao;
     public OrderDao orderDao;

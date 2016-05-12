@@ -1,8 +1,10 @@
 package pojos;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import java.util.Set;
 
 /**
  * Created by KIRILL on 08.05.2016.
@@ -19,6 +21,8 @@ public class OrderStatus {
     private int totalPrice;
     private int totalTime;
     private String orderStatus;
+    private Set<Order> orders;
+
 
     public int getOrderId() {
         return orderId;

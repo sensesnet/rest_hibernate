@@ -16,8 +16,8 @@ public class Project_App {
     public static void main(String[] args) throws SQLException {
         Factory factory = Factory.getInstanse();
         UserDao userDao = factory.getUserDao();
+        OrderDao orderDao = factory.getOrderDao();
         MealDao mealDao = factory.getMealDao();
-        OrderDao orderDao  = factory.getOrderDao();
 
 
         User user = new User();
@@ -29,6 +29,7 @@ public class Project_App {
         user.setStatus("admin");
         userDao.add(user);
 
+
         Meal meal = new Meal();
         meal.setMealName("meal_1");
         meal.setMealPrice(200);
@@ -36,16 +37,17 @@ public class Project_App {
         meal.setMealConsist("Test hibernate mapping");
         mealDao.add(meal);
 
-        Order order = new Order();
-        order.setOrderId(1);
-        order.setMealId(1);
-        order.setUserId(1);
-        orderDao.add(order);
 
-//        List<User> users = userDao.getAll();
-       System.out.print("User DB have fields:");
+//        Order order = new Order();
+//        order.setOrderId(1);
+//        order.setMealId(1);
+//        order.setUserId(1);
+//        orderDao.add(order);
+
+        List<User> users = userDao.getAll();
+        System.out.print("User DB have fields:");
 //
-//        for (User userlist : users) {
+        for (User userlist : users) {
 //            userlist.getId();
 //            userlist.getFirstName();
 //            userlist.getSecongName();
@@ -53,9 +55,14 @@ public class Project_App {
 //            userlist.getPassword();
 //            userlist.getEmail();
 //            userlist.getStatus();
-//            System.out.print(userlist.getId() + " "
-//                    + userlist.getFirstName());
-//        }
+            System.out.print(userlist.getId() + " "
+                    + userlist.getFirstName()+ " "
+                    +userlist.getSecongName()+ " "
+                    + userlist.getLogin()+ " "
+                    +userlist.getPassword()+ " "
+                    +userlist.getEmail() + " "
+                    +userlist.getStatus());
+        }
 
     }
 }

@@ -1,6 +1,7 @@
 package pojos;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by KIRILL on 08.05.2016.
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @Entity                   //  annotation describe DB table how javaclass
 @Table(name = "User")       //  table name
 
-public class User {
+public class User implements Serializable {
 
     @Id
     @Column(name = "id")      //autoincrement identify explicitly column
@@ -32,6 +33,8 @@ public class User {
 
     @Column(name = "status")
     private String status;
+
+    private UserDetail userDetail;
 
     public int getId() {
         return id;
