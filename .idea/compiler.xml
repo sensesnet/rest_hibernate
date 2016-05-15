@@ -23,15 +23,29 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="restaurant" />
-        <module name="services" />
         <module name="web" />
+      </profile>
+      <profile default="false" name="Annotation profile for services" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="services" />
+      </profile>
+      <profile default="false" name="Annotation profile for dao" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="dao" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Dao" target="1.5" />
+      <module name="dao" target="1.6" />
       <module name="restaurant" target="1.5" />
       <module name="restHibernate" target="1.5" />
-      <module name="services" target="1.5" />
+      <module name="services" target="1.6" />
       <module name="web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
