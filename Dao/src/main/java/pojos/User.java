@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Entity                   //  annotation describe DB table how javaclass
 @Table(name = "User")       //  table name
 
-public class User implements Serializable {
+public class User {
 
     @Id
     @Column(name = "id")      //autoincrement identify explicitly column
@@ -34,7 +34,6 @@ public class User implements Serializable {
     @Column(name = "status")
     private String status;
 
-    private UserDetail userDetail;
 
     public int getId() {
         return id;

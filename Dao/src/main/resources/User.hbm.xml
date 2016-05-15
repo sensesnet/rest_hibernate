@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="pojos" auto-import="false"  catalog="my_db">
+<hibernate-mapping package="pojos">
     <class name="User" table="User" lazy="false">
 
         <id name="id" type="int" column="id">
             <generator class="increment"/>
         </id>
-        <one-to-one name="userDetail" class="UserDetail"></one-to-one>
-
         <property name="firstName" column="firstName" type="string"/>
         <property name="secongName" column="secongName" type="string"/>
         <property name="login" column="login" type="string"/>

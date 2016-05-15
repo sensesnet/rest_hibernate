@@ -3,36 +3,16 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rest_hibernate</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
-
-        <!-- SQL dialect -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-
-        <!-- JDBC connection pool (use the built-in) -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="hibernate.connection.pool_size">10</property>
-
-        <!-- Enable Hibernate's automatic session context management -->
-        <!--property name="current_session_context_class">thread</property-->
-
-        <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-
-        <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">create</property>
 
-        <mapping resource="User.hbm.xml"/>
-        <mapping resource="Meal.hbm.xml"/>
-        <mapping resource="Order.hbm.xml"/>
-        <mapping resource="OrderStatus.hbm.xml"/>
-
-        <!--mapping class="pojos.User"/-->
-        <!--mapping class="pojos.Meal"/-->
-        <!--mapping class="pojos.Order"/-->
-        <!--mapping class="pojos.OrderStatus"/-->
+        <mapping class="pojos.User"/>
 
     </session-factory>
 </hibernate-configuration>

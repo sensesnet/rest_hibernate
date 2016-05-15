@@ -34,13 +34,7 @@ public class HibernateUtil {
 
 
     public static SessionFactory getSessionFactory() {
-//        Session session = (Session) sessions.get();
-//        if (session == null) {
-//            session = sessionFactory.openSession();
-//            sessions.set(session);
-//        }
-//
-//        return session;
+
         return sessionFactory;
     }
 
