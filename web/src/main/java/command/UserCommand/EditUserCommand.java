@@ -1,21 +1,21 @@
 package command.UserCommand;
 
-import by.restaurant.DaoExceptions.DaoException;
-import by.restaurant.ServiceExeption.ServiceException;
-import by.restaurant.Services.UserService;
-import by.restaurant.command.ICommand.ICommand;
-import by.restaurant.pojos.User;
+
+
+import Services.UserService;
+import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by KIRILL on 14.04.2016.
  */
-public class EditUserCommand implements ICommand {
+public class EditUserCommand implements iCommand {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         UserService userService = new UserService();
@@ -28,7 +28,11 @@ public class EditUserCommand implements ICommand {
             RequestDispatcher view = request.getRequestDispatcher(page);
             view.forward(request,response);
 
-        } catch (DaoException | ServiceException | IOException | ServletException e) {
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

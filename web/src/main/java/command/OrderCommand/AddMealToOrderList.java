@@ -1,19 +1,18 @@
 package command.OrderCommand;
 
-import by.restaurant.DaoExceptions.DaoException;
-import by.restaurant.ServiceExeption.ServiceException;
-import by.restaurant.Services.MealService;
-import by.restaurant.Services.OrderService;
-import by.restaurant.command.ICommand.ICommand;
-import by.restaurant.pojos.Meal;
-import by.restaurant.pojos.Order;
-import by.restaurant.pojos.User;
+
+import Services.MealService;
+import Services.OrderService;
+import command.iCommand.iCommand;
+import pojos.Order;
+import pojos.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -21,14 +20,14 @@ import java.util.logging.Logger;
 /**
  * Created by KIRILL on 29.04.2016.
  */
-public class AddMealToOrderList implements ICommand {
+public class AddMealToOrderList implements iCommand {
 
 
     public static Logger logger = Logger.getLogger(MealService.class.getName());
 
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException, DaoException, ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException, SQLException {
 
         Order order = new Order();
         OrderService orderService = new OrderService();
@@ -38,17 +37,14 @@ public class AddMealToOrderList implements ICommand {
         int numOfSession = request.getSession().hashCode();
 
 
-        order.setUser_ID(user.getUSER_ID());
-        order.setMeal_ID(Integer.parseInt(request.getParameter("mealID")));
-        order.setOrder_ID(numOfSession);
-
-
+        order.setUserId(user.getId());
+        order.setMealId(Integer.parseInt(request.getParameter("mealId")));
+        order.setOrderId(numOfSession);
         orderService.add(order);
 
+
         try {
-
-
-            List orderBean = orderService.getById(numOfSession);
+            List orderBean = orderService.getByIdList(numOfSession);
             int price = mealService.getTotalPrice(orderBean);
             int timeToCook = mealService.getTotalTime(orderBean);
 
@@ -62,9 +58,13 @@ public class AddMealToOrderList implements ICommand {
             RequestDispatcher dispatcher = request.getRequestDispatcher(page);
             dispatcher.forward(request, response);
             logger.info("Meal List was forward");
-
-        } catch (ServletException | IOException | DaoException | ServiceException e) {
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }

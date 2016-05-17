@@ -45,13 +45,14 @@ public class AddMealToOrdercheckboxList implements iCommand {
             order.setOrderId(numOfSession);
             orderService.add(order);
         }
+
         try {
             RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 
             request.setAttribute("user", user);
             request.setAttribute("meal", mealService.getAll());
             request.setAttribute("orderID", numOfSession);
-            List orderBean = orderService.getById(numOfSession);
+            List orderBean = orderService.getByIdList(numOfSession);
             int price = mealService.getTotalPrice(orderBean);
             int timeToCook = mealService.getTotalTime(orderBean);
 
@@ -62,6 +63,12 @@ public class AddMealToOrdercheckboxList implements iCommand {
 
             dispatcher.forward(request, response);
             logger.info("Meal List was forward");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }

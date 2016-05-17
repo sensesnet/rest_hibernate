@@ -1,23 +1,24 @@
 package command.UserCommand;
 
-import by.restaurant.DaoExceptions.DaoException;
-import by.restaurant.ServiceExeption.ServiceException;
-import by.restaurant.Services.MealService;
-import by.restaurant.Services.OrderStatusService;
-import by.restaurant.Services.UserService;
-import by.restaurant.command.ICommand.ICommand;
+
+import Services.MealService;
+import Services.OrderStatusService;
+import Services.UserService;
+import command.iCommand.iCommand;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
 /**
  * Created by KIRILL on 21.04.2016.
  */
-public class ShowUserCommand implements ICommand {
+public class ShowUserCommand implements iCommand {
     public static Logger logger = Logger.getLogger(UserService.class.getName());
 
     @Override
@@ -43,7 +44,11 @@ public class ShowUserCommand implements ICommand {
             dispatcher.forward(request, response);
             logger.info("User List was forward");
 
-        } catch (ServletException | IOException | ServiceException | DaoException e) {
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

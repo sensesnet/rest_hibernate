@@ -1,9 +1,10 @@
 package filters;
 
-import by.restaurant.DaoExceptions.DaoException;
-import by.restaurant.ServiceExeption.ServiceException;
-import by.restaurant.Services.UserService;
-import by.restaurant.pojos.User;
+
+
+import Services.UserService;
+import org.hibernate.service.spi.ServiceException;
+import pojos.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -50,7 +51,7 @@ public class LoginFilter extends HttpServlet {
         } else {
             response.sendRedirect("reIndex.jsp");
         }
-        if ((user != null) && (user.getPASSWORD().equals(password))) {
+        if ((user != null) && (user.getPassword().equals(password))) {
             request.getSession().setAttribute("currentUser", user);
             response.sendRedirect("Controller");
 

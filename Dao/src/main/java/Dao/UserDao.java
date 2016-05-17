@@ -1,5 +1,9 @@
 package Dao;
 
+import org.hibernate.Session;
+import pojos.User;
+import util.HibernateUtil;
+
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
@@ -32,5 +36,23 @@ public class UserDao extends BaseDao {
     @Override
     public void edit(Object o) throws SQLException {
         super.edit(o);
+    }
+
+    public User getByLogin(String login) {
+        User result = null;
+        Session session = null;
+
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            result = (User) session.get(User.class,login);//load(getPersistentClass(),id);  // return object
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if ((session != null) && (session.isOpen())) {      //clean memory
+                session.close();                   // close session
+            }
+            return result;
+        }
     }
 }

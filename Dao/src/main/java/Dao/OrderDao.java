@@ -1,6 +1,9 @@
 package Dao;
 
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import pojos.Order;
 import util.HibernateUtil;
 
@@ -38,15 +41,15 @@ public class OrderDao extends BaseDao {
         super.edit(o);
     }
 
-    public List getById(int id) throws SQLException {
-        List result = new ArrayList();
+    public List getByIdList(int id) throws SQLException {
+        List result = null;
         Session session = null;
 
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-
-
+            Criteria criteria = session.createCriteria(Order.class);
+            criteria.add(Restrictions.eq("orderId",id));
+            result = criteria.list();  // return object
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,4 +60,5 @@ public class OrderDao extends BaseDao {
             return result;
         }
     }
+
 }

@@ -2,6 +2,9 @@ package controller;
 
 
 
+import command.MealCommand.*;
+import command.OrderCommand.*;
+import command.UserCommand.*;
 import command.iCommand.iCommand;
 import pojos.User;
 
@@ -11,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by KIRILL on 14.04.2016.
@@ -48,7 +52,7 @@ public class Controller extends HttpServlet {
 
 // use action work with admin form
 
-        if (user.getSTATUS().equalsIgnoreCase("admin")) {
+        if (user.getStatus().equalsIgnoreCase("admin")) {
 
 
 
@@ -94,7 +98,7 @@ public class Controller extends HttpServlet {
         }
 
 //work with user form
-        if (user.getSTATUS().equalsIgnoreCase("user")) {
+        if (user.getStatus().equalsIgnoreCase("user")) {
             if (action == null) {
                 com = new ShowMealCommand();
 
@@ -116,8 +120,9 @@ public class Controller extends HttpServlet {
         try {
             com.execute(request, response);
 
-        } catch (ServiceException | DaoException e)
-        {e.printStackTrace();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 

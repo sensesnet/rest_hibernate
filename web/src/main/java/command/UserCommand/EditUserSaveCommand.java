@@ -1,41 +1,40 @@
 package command.UserCommand;
 
-import by.restaurant.DaoExceptions.DaoException;
-import by.restaurant.ServiceExeption.ServiceException;
-import by.restaurant.Services.UserService;
-import by.restaurant.command.ICommand.ICommand;
-import by.restaurant.pojos.User;
 
-import javax.servlet.RequestDispatcher;
+
+
+import Services.UserService;
+import command.iCommand.iCommand;
+import pojos.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import java.sql.SQLException;
 import java.util.logging.Logger;
 
 /**
  * Created by KIRILL on 22.04.2016.
  */
-public class EditUserSaveCommand implements ICommand {
+public class EditUserSaveCommand implements iCommand {
     public static Logger logger = Logger.getLogger(UserService.class.getName());
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException, DaoException, ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
 
 
         UserService userService = new UserService();
         int uId = Integer.valueOf(request.getParameter("userId"));
         User user = userService.getById(uId);
-        user.setUSER_ID(uId);
+        user.setId(uId);
         String firstName = request.getParameter("firstName");
-        user.setFIRST_NAME(firstName);
-        user.setSECOND_NAME(request.getParameter("secondName"));
-        user.setLOGIN(request.getParameter("login"));
-        user.setPASSWORD(request.getParameter("password"));
-        user.setEMAIL(request.getParameter("email"));
-        user.setCREDITS(Integer.parseInt(request.getParameter("credits")));
-        user.setSTATUS(request.getParameter("status"));
+        user.setFirstName(firstName);
+        user.setSecongName(request.getParameter("secondName"));
+        user.setLogin(request.getParameter("login"));
+        user.setPassword(request.getParameter("password"));
+        user.setEmail(request.getParameter("email"));
+        user.setStatus(request.getParameter("status"));
         userService.edit(user);
         response.sendRedirect("Controller");
     }

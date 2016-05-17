@@ -1,35 +1,36 @@
 package command.OrderCommand;
 
-import by.restaurant.DaoExceptions.DaoException;
-import by.restaurant.ServiceExeption.ServiceException;
-import by.restaurant.Services.OrderStatusService;
-import by.restaurant.command.ICommand.ICommand;
-import by.restaurant.pojos.Order_status;
+
+import Services.OrderStatusService;
+import command.iCommand.iCommand;
+import pojos.OrderStatus;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by KIRILL on 29.04.2016.
  */
-public class SendMealToAdminCommand implements ICommand {
+public class SendMealToAdminCommand implements iCommand {
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException, DaoException, ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         OrderStatusService orderStatusService = new OrderStatusService();
         String page = "/WEB-INF/view/user_page/confirm.jsp";
-        Order_status orderStatus = new Order_status();
+        OrderStatus orderStatus = new OrderStatus();
 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(page);
         int ordId = Integer.valueOf(request.getParameter("orderID"));
-        orderStatus.setOrder_ID(ordId);
+        orderStatus.setOrderId(ordId);
 
         int price = Integer.valueOf(request.getParameter("price"));
-        orderStatus.setOrder_Price(price);
+        orderStatus.setTotalPrice(price);
 
-        orderStatus.setOrder_Status("to admin");
+        orderStatus.setOrderStatus("to admin");
         orderStatusService.add(orderStatus);
 
 

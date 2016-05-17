@@ -44,4 +44,10 @@ public class UserService implements iUserService {
     public User getById(int id) throws SQLException {
         return (User) userDao.getById(id);
     }
+
+    public User getByLogin(String login) {
+
+        return  userDao.getByLogin(login);
+
+    }
 }

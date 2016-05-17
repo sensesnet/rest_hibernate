@@ -1,21 +1,22 @@
 package command.OrderCommand;
 
-import by.restaurant.DaoExceptions.DaoException;
-import by.restaurant.Services.OrderStatusService;
-import by.restaurant.command.ICommand.ICommand;
+
+import Services.OrderStatusService;
+import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
 /**
  * Created by KIRILL on 21.04.2016.
  */
-public class ShowOrderCommand implements ICommand {
+public class ShowOrderCommand implements iCommand {
 
 
     public static Logger logger = Logger.getLogger(OrderStatusService.class.getName());
@@ -35,7 +36,11 @@ public class ShowOrderCommand implements ICommand {
 
 
             logger.info("OrderStatus List was forward");
-        } catch (DaoException | ServletException | IOException e) {
+        }  catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

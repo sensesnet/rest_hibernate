@@ -44,4 +44,8 @@ public class OrderService implements iOrderService {
         return (Order) orderDao.getById(id);
     }
 
+    public List getByIdList(int id) throws SQLException {
+        return orderDao.getByIdList(id);
+    }
+
 }
