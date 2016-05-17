@@ -1,5 +1,7 @@
 package Dao;
 
+import pojos.OrderStatus;
+
 /**
  * Created by KIRILL on 09.05.2016.
  */
@@ -9,6 +11,9 @@ public class Factory {
     public UserDao userDao;
     public MealDao mealDao;
     public OrderDao orderDao;
+    public OrderStatusDao orderStatusDao;
+    public UserDetailDao userDetailDao;
+
 
     private Factory() {
     }
@@ -33,6 +38,18 @@ public class Factory {
         if (orderDao == null)
             orderDao = new OrderDao();
         return orderDao;
+
+    }
+    public OrderStatusDao getOrderStatusDao() {
+        if (orderStatusDao == null)
+            orderStatusDao = new OrderStatusDao();
+        return orderStatusDao;
+
+    }
+    public UserDetailDao getUserDetailDao() {
+        if (userDetailDao == null)
+            userDetailDao = new UserDetailDao();
+        return userDetailDao;
 
     }
 

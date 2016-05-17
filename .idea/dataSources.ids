@@ -8,58 +8,6 @@
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
       <schema id="1" name="rest_hibernate"/>
-      <table id="2" parent="1" name="hibernate_sequence"/>
-      <table id="3" parent="1" name="meal"/>
-      <table id="4" parent="1" name="user"/>
-      <column id="5" parent="2" name="next_val">
-        <data-type>bigint(20)</data-type>
-      </column>
-      <column id="6" parent="3" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="7" parent="3" name="mealConsist">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="8" parent="3" name="mealName">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="9" parent="3" name="mealPrice">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="10" parent="3" name="mealTime">
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="11" parent="3" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="12" parent="4" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="13" parent="4" name="email">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="14" parent="4" name="firstName">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="15" parent="4" name="login">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="16" parent="4" name="password">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="17" parent="4" name="secongName">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="18" parent="4" name="status">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="19" parent="4" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
     </database-model>
   </data-source>
 </component>

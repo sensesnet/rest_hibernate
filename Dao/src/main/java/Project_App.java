@@ -7,6 +7,7 @@ import pojos.Order;
 import pojos.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by KIRILL on 09.05.2016.
@@ -43,18 +44,11 @@ public class Project_App {
         order.setMealId(1);
         order.setUserId(1);
         orderDao.add(order);
-//
+
 //        List<User> users = userDao.getAll();
 //        System.out.print("User DB have fields:");
-////
+//
 //        for (User userlist : users) {
-//            userlist.getId();
-//            userlist.getFirstName();
-//            userlist.getSecongName();
-//            userlist.getLogin();
-//            userlist.getPassword();
-//            userlist.getEmail();
-//            userlist.getStatus();
 //            System.out.print(userlist.getId() + " "
 //                    + userlist.getFirstName()+ " "
 //                    +userlist.getSecongName()+ " "

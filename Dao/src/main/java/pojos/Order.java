@@ -19,8 +19,8 @@ public class Order {
     private int mealId;
     @Column(name = "userId")
     private int userId;
-    @Column(name = "Status")
-    private OrderStatus orderStatus;
+//    @Column(name = "Status")
+//    private OrderStatus orderStatus;
 
     public int getId() {
         return id;
