@@ -1,0 +1,60 @@
+package filters;
+
+import by.restaurant.DaoExceptions.DaoException;
+import by.restaurant.ServiceExeption.ServiceException;
+import by.restaurant.Services.UserService;
+import by.restaurant.pojos.User;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ * Created by KIRILL on 14.04.2016.
+ */
+public class LoginFilter extends HttpServlet {
+
+
+    public LoginFilter() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String login = request.getParameter("login");
+        String password = request.getParameter("password");
+        UserService userService = new UserService();
+
+
+        User user = null;
+        if (login != null) {
+            try {
+                user = userService.getByLogin(login);
+            } catch (ServiceException e) {
+                e.printStackTrace();
+            }
+        } else {
+            response.sendRedirect("reIndex.jsp");
+        }
+        if ((user != null) && (user.getPASSWORD().equals(password))) {
+            request.getSession().setAttribute("currentUser", user);
+            response.sendRedirect("Controller");
+
+        } else response.sendRedirect("reIndex.jsp");
+
+    }
+}
