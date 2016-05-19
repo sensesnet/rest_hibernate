@@ -6,12 +6,12 @@ import javax.persistence.*;
  * Created by KIRILL on 08.05.2016.
  */
 @Entity                   //  annotation describe DB table how javaclass
-@Table(name = "Meal")       //  table name
+@Table(name = "MEAL")       //  table name
 public class Meal {
 
     @Id
     @Column(name = "id")      //autoincrement identify explicitly column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // value autogenerate
+    @GeneratedValue(strategy = GenerationType.AUTO)  // value autogenerate
     private int id;
 
     @Column(name = "mealName")

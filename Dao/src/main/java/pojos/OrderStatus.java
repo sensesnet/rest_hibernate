@@ -8,7 +8,7 @@ public class OrderStatus {
     @Id
     @Column(name = "id")      //autoincrement identify explicitly column
     @GeneratedValue(strategy = GenerationType.AUTO)  // value autogenerate
-    private String id;
+    private int id;
 
     @Column(name = "order_Id")
     private int orderId;
@@ -23,11 +23,11 @@ public class OrderStatus {
     private String orderStatus;
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

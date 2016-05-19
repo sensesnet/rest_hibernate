@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by KIRILL on 08.05.2016.
  */
 @Entity                   //  annotation describe DB table how javaclass
-@Table(name = "User")       //  table name
+@Table(name = "USER")       //  table name
 
 public class User {
 

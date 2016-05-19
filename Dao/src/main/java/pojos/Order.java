@@ -3,7 +3,7 @@ package pojos;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Order")
+@Table(name="ORDER_MEAL_USER")
 public class Order {
 
     @Id

@@ -8,12 +8,12 @@ import javax.persistence.*;
  * create one - to - one mapping (user) with (userDetail) tables
  */
 @Entity                   //  annotation describe DB table how javaclass
-@Table(name = "UserDetail")       //  table name
+@Table(name = "USER_DETAIL")       //  table name
 public class UserDetail{
     @Id
     @Column(name = "id")      //autoincrement identify explicitly column
     @GeneratedValue(strategy = GenerationType.AUTO)  // value autogenerate
-    private String id;
+    private int id;
     @Column(name = "userId")
     private int userId;
     @Column(name = "country")
@@ -66,12 +66,11 @@ public class UserDetail{
     }
 
 
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 }
