@@ -1,25 +1,35 @@
 package pojos;
 
 import javax.persistence.*;
-import java.util.Set;
-
-/**
- * Created by KIRILL on 08.05.2016.
- */
 
 @Entity                   //  annotation describe DB table how javaclass
-@Table(name = "OrderStatus")       //  table name
+@Table(name = "Order_Status")       //  table name
 public class OrderStatus {
-    @Column(name = "orderId")
-    private int orderId;
-    @Column(name = "totalPrice")
-    private int totalPrice;
-    @Column(name = "totalTime")
-    private int totalTime;
-    @Column(name = "orderStatus")
-    private String orderStatus;
-//    private Set<Order> orders;
+    @Id
+    @Column(name = "id")      //autoincrement identify explicitly column
+    @GeneratedValue(strategy = GenerationType.AUTO)  // value autogenerate
+    private String id;
 
+    @Column(name = "order_Id")
+    private int orderId;
+
+    @Column(name = "total_Price")
+    private int totalPrice;
+
+    @Column(name = "total_Time")
+    private int totalTime;
+
+    @Column(name = "order_Status")
+    private String orderStatus;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public int getOrderId() {
         return orderId;
@@ -48,4 +58,8 @@ public class OrderStatus {
     public String getOrderStatus() {return orderStatus;}
 
     public void setOrderStatus(String orderStatus) {this.orderStatus = orderStatus;}
+
+
+
+
 }

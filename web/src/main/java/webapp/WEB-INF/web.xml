@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>LoginFilter</servlet-name>
-        <servlet-class>by.restaurant.filters.LoginFilter</servlet-class>
+        <servlet-class>filters.LoginFilter</servlet-class>
     </servlet>
 
     <servlet-mapping>

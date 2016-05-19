@@ -8,17 +8,17 @@ import java.sql.SQLException;
  */
 public class projectApp {
 
-    public static void main(String[] args) throws SQLException {
-        UserService userService = new UserService();
-        User user = new User();
-        user.setFirstName("Artem");
-        user.setSecongName("Degt");
-        user.setLogin("testService");
-        user.setPassword("testService");
-        user.setEmail("test@service.com");
-        userService.add(user);
-        System.out.println("new user add by service");
-
-
-    }
+//    public static void main(String[] args) throws SQLException {
+//        UserService userService = new UserService();
+//        User user = new User();
+//        user.setFirstName("Artem");
+//        user.setSecongName("Degt");
+//        user.setLogin("testService");
+//        user.setPassword("testService");
+//        user.setEmail("test@service.com");
+//        userService.add(user);
+//        System.out.println("new user add by service");
+//
+//
+//    }
 }

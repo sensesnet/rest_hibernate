@@ -1,7 +1,5 @@
 package iService;
 
-import pojos.Order;
-
 import java.sql.SQLException;
 import java.util.List;
 

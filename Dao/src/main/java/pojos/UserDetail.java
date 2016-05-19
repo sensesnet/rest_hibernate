@@ -1,9 +1,6 @@
 package pojos;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.io.Serializable;
+import javax.persistence.*;
 
 /**
  * Created by KIRILL on 11.05.2016.
@@ -13,7 +10,10 @@ import java.io.Serializable;
 @Entity                   //  annotation describe DB table how javaclass
 @Table(name = "UserDetail")       //  table name
 public class UserDetail{
-
+    @Id
+    @Column(name = "id")      //autoincrement identify explicitly column
+    @GeneratedValue(strategy = GenerationType.AUTO)  // value autogenerate
+    private String id;
     @Column(name = "userId")
     private int userId;
     @Column(name = "country")
@@ -65,4 +65,13 @@ public class UserDetail{
         this.flat = flat;
     }
 
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

@@ -1,7 +1,6 @@
 package Dao;
 
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import pojos.Order;
@@ -9,7 +8,6 @@ import util.HibernateUtil;
 
 import java.io.Serializable;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

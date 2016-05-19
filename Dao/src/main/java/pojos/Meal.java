@@ -11,7 +11,7 @@ public class Meal {
 
     @Id
     @Column(name = "id")      //autoincrement identify explicitly column
-    @GeneratedValue(strategy = GenerationType.AUTO)  // value autogenerate
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // value autogenerate
     private int id;
 
     @Column(name = "mealName")
