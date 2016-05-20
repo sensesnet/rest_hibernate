@@ -19,7 +19,6 @@ import org.apache.log4j.Logger;
  */
 public class BaseDao<T> implements Dao<T> {
 
-    private Transaction transaction = null;
     private static Logger log = Logger.getLogger(BaseDao.class);
     protected static HibernateUtil hibernateUtil = HibernateUtil.getHibernateUtil();
     private static Session session = null;
@@ -30,7 +29,7 @@ public class BaseDao<T> implements Dao<T> {
             session.save(t);
         } catch (HibernateException e) {
             log.error("Save object error" + t, e);
-            throw new DaoException(e);
+            throw new DaoException("Save object error",e);
         }
     }
 
@@ -40,7 +39,7 @@ public class BaseDao<T> implements Dao<T> {
             session.delete(t);
         } catch (HibernateException e) {
             log.error(" - Error remove object", e);
-            throw new DaoException(e);
+            throw new DaoException("Error remove object", e);
         }
     }
 
