@@ -1,5 +1,6 @@
 package Dao;
 
+import DaoExceptions.DaoException;
 import pojos.User;
 
 import java.io.Serializable;
@@ -11,14 +12,14 @@ import java.util.List;
  */
 public interface Dao<T> {
 
-    public void add(T t) throws SQLException;
+    public void add(T t) throws SQLException, DaoException;
 
-    public void remove(T t) throws SQLException;
+    public void remove(T t) throws SQLException, DaoException;
 
-    public T getById(Serializable id) throws SQLException;
+    public T getById(Serializable id) throws SQLException, DaoException;
 
-    public List<T> getAll() throws SQLException;
+    public List<T> getAll() throws SQLException, DaoException;
 
-    public void edit(T t) throws SQLException;
+    public void edit(T t) throws SQLException, DaoException;
 
 }

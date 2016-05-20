@@ -1,6 +1,9 @@
 package Dao;
 
+import DaoExceptions.DaoException;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import pojos.User;
 import util.HibernateUtil;
 
@@ -14,45 +17,45 @@ import java.util.List;
 public class UserDao extends BaseDao {
 
     @Override
-    public void add(Object o) throws SQLException {
+    public void add(Object o) throws SQLException, DaoException {
         super.add(o);
     }
 
     @Override
-    public void remove(Object o) throws SQLException {
+    public void remove(Object o) throws SQLException, DaoException {
         super.remove(o);
     }
 
     @Override
-    public Object getById(Serializable id) throws SQLException {
+    public Object getById(Serializable id) throws SQLException, DaoException {
         return super.getById(id);
     }
 
     @Override
-    public List getAll() throws SQLException {
+    public List getAll() throws SQLException, DaoException {
         return super.getAll();
     }
 
     @Override
-    public void edit(Object o) throws SQLException {
+    public void edit(Object o) throws SQLException, DaoException {
         super.edit(o);
     }
 
+
+    /**
+     * method  to get USER by his login
+     *
+     * @param login
+     * @return
+     */
     public User getByLogin(String login) {
-        User result = null;
-        Session session = null;
+        Session session = hibernateUtil.getSession();
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.add(Restrictions.eq("login", login));
+        User user = (User) criteria.uniqueResult();
 
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            result = (User) session.get(User.class,login);//load(getPersistentClass(),id);  // return object
+        return user;
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if ((session != null) && (session.isOpen())) {      //clean memory
-                session.close();                   // close session
-            }
-            return result;
-        }
+
     }
 }

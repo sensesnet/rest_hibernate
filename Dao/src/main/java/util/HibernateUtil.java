@@ -55,7 +55,7 @@ public class HibernateUtil {
      *
      * @return
      */
-    public static synchronized HibernateUtil getHibernateUtil() throws Throwable {
+    public static synchronized HibernateUtil getHibernateUtil() {
         if (util == null) {
             util = new HibernateUtil();
         }
