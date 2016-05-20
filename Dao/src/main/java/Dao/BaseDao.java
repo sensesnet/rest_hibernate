@@ -19,25 +19,17 @@ public class BaseDao<T> implements Dao<T> {
 
     private static Logger log = Logger.getLogger(BaseDao.class);
     private Transaction transaction = null;
+    private static Logger log = Logger.getLogger(BaseDao.class);
+    protected static HibernateUtil hibernateUtil = HibernateUtil.getHibernateUtil();
+    private static Session session = null;
 
     public void add(T t) throws SQLException {
-        Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession(); //open session
-            session.beginTransaction();                                // start transaction
-            log.info(" - Start add method ");
+            session = hibernateUtil.getSession();
             session.save(t);
-            session.getTransaction().commit();                         //start commit
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            log.error("Error add <T> in Dao" + e);
-        } finally {
-            if ((session != null) && (session.isOpen())) {      //clean memory
-
-                session.close();                  // close session
-            }
-        }
+        } catch (HibernateException e) {
+            log.error(ERRORSAVE + t, e);
+            throw new DaoException(e);
     }
 
     public void remove(T t) throws SQLException {
