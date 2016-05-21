@@ -1,5 +1,7 @@
 package Dao;
 
+import DaoExceptions.DaoException;
+
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
@@ -9,27 +11,27 @@ import java.util.List;
  */
 public class OrderStatusDao extends BaseDao {
     @Override
-    public void add(Object o) throws SQLException {
+    public void add(Object o) throws SQLException, DaoException {
         super.add(o);
     }
 
     @Override
-    public void remove(Object o) throws SQLException {
+    public void remove(Object o) throws SQLException, DaoException {
         super.remove(o);
     }
 
     @Override
-    public Object getById(Serializable id) throws SQLException {
+    public Object getById(Serializable id) throws SQLException, DaoException {
         return super.getById(id);
     }
 
     @Override
-    public List getAll() throws SQLException {
+    public List getAll() throws SQLException, DaoException {
         return super.getAll();
     }
 
     @Override
-    public void edit(Object o) throws SQLException {
+    public void edit(Object o) throws SQLException, DaoException {
         super.edit(o);
     }
 }
