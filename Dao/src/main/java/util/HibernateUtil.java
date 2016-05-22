@@ -21,24 +21,21 @@ public class HibernateUtil {
 
     private static HibernateUtil util = null;
     private static Logger log = Logger.getLogger(HibernateUtil.class);
-    private SessionFactory sessionFactory = null;
+    private static SessionFactory sessionFactory = null;
     private final ThreadLocal sessions = new ThreadLocal();
 
-    private HibernateUtil() {
+    private HibernateUtil() {    }
 
-        try {
-            Configuration configuration = new Configuration().configure();
-            ServiceRegistry serviceRegistry
-                    = new StandardServiceRegistryBuilder()
-                    .applySettings(configuration.getProperties()).build();
-            sessionFactory = configuration
-                    .setNamingStrategy(new CustomNamingStrategy())
-                    .buildSessionFactory(serviceRegistry);
-        } catch (Throwable ex) {
-            log.error("Initial SessionFactory creation failed." + ex);
+        static {
+            try {
+                // Create the SessionFactory from hibernate.cfg.xml
+                sessionFactory = new Configuration().configure().buildSessionFactory();
+            } catch (Throwable ex) {
+                // Make sure you log the exception, as it might be swallowed
+                System.err.println("Initial SessionFactory creation failed." + ex);
+                throw new ExceptionInInitializerError(ex);
+            }
         }
-
-    }
 
     public Session getSession() {
         Session session = (Session) sessions.get();
@@ -64,6 +61,7 @@ public class HibernateUtil {
 
     /**
      * close session and  clear ThreadLocal varible
+     *
      * @param session
      */
     public void closeSession(Session session) {
