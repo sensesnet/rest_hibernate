@@ -2,6 +2,7 @@ package controller;
 
 
 
+import DaoExceptions.DaoException;
 import command.MealCommand.*;
 import command.OrderCommand.*;
 import command.UserCommand.*;
@@ -121,6 +122,8 @@ public class Controller extends HttpServlet {
             com.execute(request, response);
 
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (DaoException e) {
             e.printStackTrace();
         }
 

@@ -2,6 +2,7 @@ package command.MealCommand;
 
 
 
+import DaoExceptions.DaoException;
 import Services.MealService;
 import command.iCommand.iCommand;
 import org.hibernate.service.spi.ServiceException;
@@ -18,7 +19,7 @@ import java.sql.SQLException;
  */
 public class EditMealSaveCommand implements iCommand {
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, DaoException {
         MealService mealService = new MealService();
         int mId = Integer.valueOf(request.getParameter("mealId"));
         Meal meal = mealService.getById(mId);

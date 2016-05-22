@@ -2,6 +2,7 @@ package command.MealCommand;
 
 
 
+import DaoExceptions.DaoException;
 import Services.MealService;
 import command.iCommand.iCommand;
 
@@ -33,6 +34,8 @@ public class EditMealCommand implements iCommand {
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (DaoException e) {
             e.printStackTrace();
         }
     }

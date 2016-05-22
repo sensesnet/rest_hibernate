@@ -2,6 +2,7 @@ package command.MealCommand;
 
 
 
+import DaoExceptions.DaoException;
 import Services.MealService;
 import Services.UserService;
 import command.iCommand.iCommand;
@@ -38,6 +39,8 @@ public class RemoveMealCommand implements iCommand {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (DaoException e) {
             e.printStackTrace();
         }
     }

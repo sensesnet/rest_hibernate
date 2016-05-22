@@ -1,5 +1,7 @@
 package command.iCommand;
 
+import DaoExceptions.DaoException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,5 +13,5 @@ import java.sql.SQLException;
  * Created by KIRILL on 14.04.2016.
  */
 public interface iCommand {
-    void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException;
+    void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, DaoException;
 }
