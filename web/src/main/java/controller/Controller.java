@@ -2,12 +2,12 @@ package controller;
 
 
 
-import DaoExceptions.DaoException;
+import by.restaurantHibernate.DaoExceptions.DaoException;
 import command.MealCommand.*;
 import command.OrderCommand.*;
 import command.UserCommand.*;
 import command.iCommand.iCommand;
-import pojos.User;
+import by.restaurantHibernate.pojos.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

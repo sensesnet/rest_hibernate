@@ -2,8 +2,8 @@ package command.MealCommand;
 
 
 
-import by.restaurant.Services.MealService;
-import pojos.Meal;
+import by.restaurantHibernate.Services.MealService;
+import by.restaurantHibernate.pojos.Meal;
 import command.iCommand.iCommand;
 
 import javax.servlet.http.HttpServletRequest;

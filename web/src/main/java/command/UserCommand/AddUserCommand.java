@@ -3,9 +3,9 @@ package command.UserCommand;
 
 
 
-import by.restaurant.Services.UserService;
+import by.restaurantHibernate.Services.UserService;
 import command.iCommand.iCommand;
-import pojos.User;
+import by.restaurantHibernate.pojos.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

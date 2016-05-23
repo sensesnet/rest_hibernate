@@ -1,11 +1,10 @@
-package Dao;
+package by.restaurantHibernate.Dao;
 
-import DaoExceptions.DaoException;
+import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.pojos.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-import pojos.User;
-import util.HibernateUtil;
 
 import java.io.Serializable;
 import java.sql.SQLException;

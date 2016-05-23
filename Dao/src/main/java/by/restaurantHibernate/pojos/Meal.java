@@ -1,4 +1,4 @@
-package pojos;
+package by.restaurantHibernate.pojos;
 
 import javax.persistence.*;
 

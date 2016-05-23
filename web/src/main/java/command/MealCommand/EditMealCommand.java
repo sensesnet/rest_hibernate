@@ -2,8 +2,8 @@ package command.MealCommand;
 
 
 
-import DaoExceptions.DaoException;
-import by.restaurant.Services.MealService;
+import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.Services.MealService;
 import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;

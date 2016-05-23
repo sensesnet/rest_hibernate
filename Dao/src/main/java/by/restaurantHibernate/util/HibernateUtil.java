@@ -1,18 +1,16 @@
-package util;
+package by.restaurantHibernate.util;
 
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 
 
 /**
  * Created by KIRILL on 08.05.2016.
  * <p>
  * Hibernate work with session. At first session will open after hibernate create
- * transaction . In transaction  you can do CRUD with DB pojos after transaction
+ * transaction . In transaction  you can do CRUD with DB by.restaurant.pojos after transaction
  * will be over after "commit" and session will "close".
  */
 

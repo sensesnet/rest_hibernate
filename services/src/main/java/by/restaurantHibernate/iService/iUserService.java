@@ -1,6 +1,6 @@
-package by.restaurant.iService;
+package by.restaurantHibernate.iService;
 
-import pojos.User;
+import by.restaurantHibernate.pojos.User;
 import java.sql.SQLException;
 import java.util.List;
 

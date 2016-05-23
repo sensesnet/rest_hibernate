@@ -2,11 +2,11 @@ package command.MealCommand;
 
 
 
-import DaoExceptions.DaoException;
-import by.restaurant.Services.MealService;
-import by.restaurant.Services.UserService;
+import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.Services.MealService;
+import by.restaurantHibernate.Services.UserService;
 import command.iCommand.iCommand;
-import pojos.Meal;
+import by.restaurantHibernate.pojos.Meal;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

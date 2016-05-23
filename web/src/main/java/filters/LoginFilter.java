@@ -2,9 +2,9 @@ package filters;
 
 
 
-import by.restaurant.Services.UserService;
+import by.restaurantHibernate.Services.UserService;
 import org.hibernate.service.spi.ServiceException;
-import pojos.User;
+import by.restaurantHibernate.pojos.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -2,9 +2,9 @@ package command.OrderCommand;
 
 
 
-import by.restaurant.Services.OrderStatusService;
+import by.restaurantHibernate.Services.OrderStatusService;
 import command.iCommand.iCommand;
-import pojos.OrderStatus;
+import by.restaurantHibernate.pojos.OrderStatus;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

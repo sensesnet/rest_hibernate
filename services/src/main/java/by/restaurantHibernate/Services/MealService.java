@@ -1,12 +1,12 @@
-package by.restaurant.Services;
+package by.restaurantHibernate.Services;
 
-import Dao.Factory;
-import Dao.MealDao;
-import DaoExceptions.DaoException;
-import by.restaurant.iService.iMealService;
+import by.restaurantHibernate.Dao.Factory;
+import by.restaurantHibernate.Dao.MealDao;
+import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.iService.iMealService;
 import org.hibernate.Transaction;
-import pojos.Meal;
-import util.HibernateUtil;
+import by.restaurantHibernate.pojos.Meal;
+import by.restaurantHibernate.util.HibernateUtil;
 
 import java.io.Serializable;
 import java.sql.SQLException;

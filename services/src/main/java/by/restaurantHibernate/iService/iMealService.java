@@ -1,7 +1,7 @@
-package by.restaurant.iService;
+package by.restaurantHibernate.iService;
 
-import DaoExceptions.DaoException;
-import pojos.Meal;
+import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.pojos.Meal;
 
 import java.io.Serializable;
 import java.sql.SQLException;

@@ -1,7 +1,7 @@
 package command.UserCommand;
 
-import by.restaurant.Services.MealService;
-import by.restaurant.Services.UserService;
+import by.restaurantHibernate.Services.MealService;
+import by.restaurantHibernate.Services.UserService;
 import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;

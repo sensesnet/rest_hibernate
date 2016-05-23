@@ -1,6 +1,6 @@
 package command.iCommand;
 
-import DaoExceptions.DaoException;
+import by.restaurantHibernate.DaoExceptions.DaoException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

@@ -1,13 +1,13 @@
-package by.restaurant.Services;
+package by.restaurantHibernate.Services;
 
-import Dao.Factory;
-import DaoExceptions.DaoException;
-import by.restaurant.iService.iUserService;
-import Dao.UserDao;
+import by.restaurantHibernate.Dao.Factory;
+import by.restaurantHibernate.Dao.OrderDao;
+import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.iService.iOrderService;
 import org.apache.log4j.Logger;
 import org.hibernate.Transaction;
-import pojos.User;
-import util.HibernateUtil;
+import by.restaurantHibernate.pojos.Order;
+import by.restaurantHibernate.util.HibernateUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,104 +16,109 @@ import java.util.List;
 /**
  * Created by KIRILL on 15.05.2016.
  */
-public class UserService implements iUserService {
+public class OrderService implements iOrderService {
 
     Factory factory = Factory.getInstanse();
-    UserDao userDao = factory.getUserDao();
-    private static Logger logger = Logger.getLogger(UserService.class);
+    OrderDao orderDao = factory.getOrderDao();
+    private static Logger logger = Logger.getLogger(OrderService.class);
 
     @Override
     public List getAll() throws SQLException {
         Transaction transaction = null;
-        List users = new ArrayList();
+        List orders = new ArrayList();
         try {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            users = userDao.getAll();
-            logger.info(" - Object users get all: ");
+            orders = orderDao.getAll();
+            logger.info(" - Object orders get all: ");
             transaction.commit();
         } catch (Exception e) {
-            logger.error(" - Object users wasn't get all: ", e);
+            logger.error(" - Object orders wasn't get all: ", e);
             transaction.rollback();
             new DaoException(e);
         }
-        return users;
+        return orders;
     }
 
     @Override
-    public void add(User user) throws SQLException {
+    public void add(Order order) throws SQLException {
         Transaction transaction = null;
         try {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            userDao.add(user);
-            logger.info(" - Object user was add: ");
+            orderDao.add(order);
+            logger.info(" - Object order was add: ");
             transaction.commit();
         } catch (Exception e) {
-            logger.error(" - Object user wasn't add: ", e);
+            logger.error(" - Object orders wasn't add: ", e);
             transaction.rollback();
             new DaoException(e);
         }
+
     }
 
     @Override
-    public void edit(User user) throws SQLException {
+    public void edit(Order order) throws SQLException {
         Transaction transaction = null;
         try {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            userDao.edit(user);
-            logger.info(" - Object user was edit: ");
+            orderDao.edit(order);
+            logger.info(" - Object order was edit: ");
             transaction.commit();
         } catch (Exception e) {
-            logger.error(" - Object user wasn't edit: ", e);
-            transaction.rollback();
-            new DaoException(e);
-        }
-    }
-
-    @Override
-    public void remove(User user) throws SQLException {
-        Transaction transaction = null;
-        try {
-            transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            userDao.remove(user);
-            logger.info(" - Object user was remove ");
-            transaction.commit();
-        } catch (Exception e) {
-            logger.error(" - Object user wasn't remove: ", e);
+            logger.error(" - Object orders wasn't edit: ", e);
             transaction.rollback();
             new DaoException(e);
         }
     }
 
     @Override
-    public User getById(int id) throws SQLException {
+    public void remove(Order order) throws SQLException {
         Transaction transaction = null;
-        User user = null;
         try {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            user = (User) userDao.getById(id);
-            logger.info(" - Object user was get by id ");
+            orderDao.remove(order);
+            logger.info(" - Object order was remove ");
             transaction.commit();
         } catch (Exception e) {
-            logger.error(" - Object user wasn't get by id: ", e);
+            logger.error(" - Object orders wasn't remove: ", e);
             transaction.rollback();
             new DaoException(e);
         }
-        return user;
     }
 
-    public User getByLogin(String login) {
+    @Override
+    public Order getById(int id) throws SQLException {
         Transaction transaction = null;
-        User user = null;
+        Order order = null;
         try {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            user =  userDao.getByLogin(login);
-            logger.info(" - Object user was get by login ");
+            order = (Order) orderDao.getById(id);
+            logger.info(" - Object order was get by id ");
             transaction.commit();
         } catch (Exception e) {
-            logger.error(" - Object user wasn't get by login: ", e);
+            logger.error(" - Object orders wasn't get by id: ", e);
             transaction.rollback();
             new DaoException(e);
         }
-        return user;
+        return order;
+
     }
-}
+
+    public List getByIdList(int id) throws SQLException {
+        Transaction transaction = null;
+        List ordersById = new ArrayList();
+        try {
+            transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
+            ordersById =  orderDao.getByIdList(id);
+            logger.info(" - Object order was get by id in LIST ");
+            transaction.commit();
+        }
+        catch(Exception e){
+            logger.error(" - Object orders wasn't get by id: ", e);
+            transaction.rollback();
+            new DaoException(e);
+        }
+        return ordersById;
+
+        }
+
+    }

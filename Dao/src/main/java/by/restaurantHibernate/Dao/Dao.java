@@ -1,7 +1,6 @@
-package Dao;
+package by.restaurantHibernate.Dao;
 
-import DaoExceptions.DaoException;
-import pojos.User;
+import by.restaurantHibernate.DaoExceptions.DaoException;
 
 import java.io.Serializable;
 import java.sql.SQLException;

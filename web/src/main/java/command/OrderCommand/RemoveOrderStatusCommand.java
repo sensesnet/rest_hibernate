@@ -1,7 +1,7 @@
 package command.OrderCommand;
 
 
-import by.restaurant.Services.OrderStatusService;
+import by.restaurantHibernate.Services.OrderStatusService;
 import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;

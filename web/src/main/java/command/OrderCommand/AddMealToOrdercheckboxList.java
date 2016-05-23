@@ -2,11 +2,11 @@ package command.OrderCommand;
 
 
 
-import by.restaurant.Services.MealService;
-import by.restaurant.Services.OrderService;
+import by.restaurantHibernate.Services.MealService;
+import by.restaurantHibernate.Services.OrderService;
 import command.iCommand.iCommand;
-import pojos.Order;
-import pojos.User;
+import by.restaurantHibernate.pojos.Order;
+import by.restaurantHibernate.pojos.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,11 +1,10 @@
-package Dao;
+package by.restaurantHibernate.Dao;
 
-import DaoExceptions.DaoException;
+import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-import util.HibernateUtil;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

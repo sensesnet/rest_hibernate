@@ -1,6 +1,4 @@
-package Dao;
-
-import pojos.OrderStatus;
+package by.restaurantHibernate.Dao;
 
 /**
  * Created by KIRILL on 09.05.2016.

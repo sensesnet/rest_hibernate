@@ -1,15 +1,15 @@
-package Dao;
+package by.restaurantHibernate.Dao;
 
-import DaoExceptions.DaoException;
+import by.restaurantHibernate.DaoExceptions.DaoException;
 
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by KIRILL on 15.05.2016.
+ * Created by KIRILL on 08.05.2016.
  */
-public class UserDetailDao extends BaseDao {
+public class MealDao extends BaseDao {
     @Override
     public void add(Object o) throws SQLException, DaoException {
         super.add(o);

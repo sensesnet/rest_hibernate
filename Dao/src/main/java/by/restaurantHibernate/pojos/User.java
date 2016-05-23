@@ -1,7 +1,6 @@
-package pojos;
+package by.restaurantHibernate.pojos;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  * Created by KIRILL on 08.05.2016.

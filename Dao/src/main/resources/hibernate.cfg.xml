@@ -13,11 +13,11 @@
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">validate</property>
 
-        <mapping class="pojos.User"/>
-        <mapping class="pojos.Meal"/>
-        <mapping class="pojos.OrderStatus"/>
-        <mapping class="pojos.UserDetail"/>
-        <mapping class="pojos.Order"/>
+        <mapping class="by.restaurantHibernate.pojos.User"/>
+        <mapping class="by.restaurantHibernate.pojos.Meal"/>
+        <mapping class="by.restaurantHibernate.pojos.OrderStatus"/>
+        <mapping class="by.restaurantHibernate.pojos.UserDetail"/>
+        <mapping class="by.restaurantHibernate.pojos.Order"/>
 
     </session-factory>
 </hibernate-configuration>

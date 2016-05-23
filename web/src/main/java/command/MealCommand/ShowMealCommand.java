@@ -3,7 +3,7 @@ package command.MealCommand;
 
 
 
-import by.restaurant.Services.MealService;
+import by.restaurantHibernate.Services.MealService;
 import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;
