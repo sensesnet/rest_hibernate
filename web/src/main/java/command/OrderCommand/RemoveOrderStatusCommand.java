@@ -1,7 +1,7 @@
 package command.OrderCommand;
 
 
-import Services.OrderStatusService;
+import by.restaurant.Services.OrderStatusService;
 import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;

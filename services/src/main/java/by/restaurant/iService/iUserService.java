@@ -1,4 +1,4 @@
-package iService;
+package by.restaurant.iService;
 
 import pojos.User;
 import java.sql.SQLException;

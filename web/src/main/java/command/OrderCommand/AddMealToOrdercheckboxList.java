@@ -2,8 +2,8 @@ package command.OrderCommand;
 
 
 
-import Services.MealService;
-import Services.OrderService;
+import by.restaurant.Services.MealService;
+import by.restaurant.Services.OrderService;
 import command.iCommand.iCommand;
 import pojos.Order;
 import pojos.User;

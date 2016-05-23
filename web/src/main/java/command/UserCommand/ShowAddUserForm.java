@@ -1,7 +1,7 @@
 package command.UserCommand;
 
 
-import Services.UserService;
+import by.restaurant.Services.UserService;
 import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;

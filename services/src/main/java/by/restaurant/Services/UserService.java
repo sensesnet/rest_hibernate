@@ -1,8 +1,8 @@
-package Services;
+package by.restaurant.Services;
 
 import Dao.Factory;
 import DaoExceptions.DaoException;
-import iService.iUserService;
+import by.restaurant.iService.iUserService;
 import Dao.UserDao;
 import org.apache.log4j.Logger;
 import org.hibernate.Transaction;

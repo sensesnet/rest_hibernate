@@ -2,7 +2,7 @@ package filters;
 
 
 
-import Services.UserService;
+import by.restaurant.Services.UserService;
 import org.hibernate.service.spi.ServiceException;
 import pojos.User;
 

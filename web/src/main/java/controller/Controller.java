@@ -110,8 +110,6 @@ public class Controller extends HttpServlet {
 
             }else if (action.equalsIgnoreCase("addMealToOrdercheckboxList")) {
                 com = new AddMealToOrdercheckboxList();
-            }else if (action.equalsIgnoreCase("removeMealFromOrderList")) {
-                com = new RemoveMealFromOrderList();
             }else if (action.equalsIgnoreCase("sendMealToAdminCommand")) {
                 com = new SendMealToAdminCommand();
             }

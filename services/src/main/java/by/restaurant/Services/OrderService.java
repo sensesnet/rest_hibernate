@@ -1,9 +1,9 @@
-package Services;
+package by.restaurant.Services;
 
 import Dao.Factory;
 import Dao.OrderDao;
 import DaoExceptions.DaoException;
-import iService.iOrderService;
+import by.restaurant.iService.iOrderService;
 import org.apache.log4j.Logger;
 import org.hibernate.Transaction;
 import pojos.Order;

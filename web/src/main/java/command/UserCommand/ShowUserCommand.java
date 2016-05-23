@@ -1,9 +1,9 @@
 package command.UserCommand;
 
 
-import Services.MealService;
-import Services.OrderStatusService;
-import Services.UserService;
+import by.restaurant.Services.MealService;
+import by.restaurant.Services.OrderStatusService;
+import by.restaurant.Services.UserService;
 import command.iCommand.iCommand;
 
 import javax.servlet.RequestDispatcher;

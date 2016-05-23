@@ -1,9 +1,9 @@
-package Services;
+package by.restaurant.Services;
 
 import Dao.Factory;
 import Dao.MealDao;
 import DaoExceptions.DaoException;
-import iService.iMealService;
+import by.restaurant.iService.iMealService;
 import org.hibernate.Transaction;
 import pojos.Meal;
 import util.HibernateUtil;

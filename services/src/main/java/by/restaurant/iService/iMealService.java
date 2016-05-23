@@ -1,4 +1,4 @@
-package iService;
+package by.restaurant.iService;
 
 import DaoExceptions.DaoException;
 import pojos.Meal;

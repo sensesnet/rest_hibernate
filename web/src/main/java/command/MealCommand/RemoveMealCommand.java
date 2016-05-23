@@ -3,8 +3,8 @@ package command.MealCommand;
 
 
 import DaoExceptions.DaoException;
-import Services.MealService;
-import Services.UserService;
+import by.restaurant.Services.MealService;
+import by.restaurant.Services.UserService;
 import command.iCommand.iCommand;
 import pojos.Meal;
 

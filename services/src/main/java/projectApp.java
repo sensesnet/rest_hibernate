@@ -1,8 +1,3 @@
-import Services.UserService;
-import pojos.User;
-
-import java.sql.SQLException;
-
 /**
  * Created by KIRILL on 15.05.2016.
  */

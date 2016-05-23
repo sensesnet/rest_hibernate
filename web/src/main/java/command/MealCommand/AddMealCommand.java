@@ -2,7 +2,7 @@ package command.MealCommand;
 
 
 
-import Services.MealService;
+import by.restaurant.Services.MealService;
 import pojos.Meal;
 import command.iCommand.iCommand;
 
