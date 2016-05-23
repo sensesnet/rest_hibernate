@@ -1,42 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"   %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Login Page</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
 </head>
+
 <body>
 
 <form method="post" action="LoginFilter">
-    <center>
-        <p>Restaurant Project</p>
-        <table border="1" width="30%" cellpadding="3">
-            <thead>
-            <tr>
-                <th colspan="2">Login Here</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>User Login</td>
-                <td><input type="text" name="login" value="" placeholder="like_login" /></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" name="password" value="" placeholder="123456" /></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Sing_IN" /></td>
-                <td><input type="reset" value="Reset_Fields" /></td>
-            </tr>
-            <tr>
-                <td colspan="2">Yet Not Registered!! <a href="registration_form.jsp">Register Here</a></td>
-            </tr>
-            </tbody>
-        </table>
-    </center>
+<div style="padding: 100px 0 0 250px;">
+
+
+<div id="login-box">
+
+<H2>Login Page (Restaurant Project)</H2>
+Please provide your credential to use this website
+
+<br />
+<br />
+
+<div id="login-box-name" style="margin-top:20px;">Login :</div>
+<div id="login-box-field" style="margin-top:20px;">
+<input name="login" class="form-login" title="Login" value="" size="30" maxlength="50" />
+</div>
+
+<div id="login-box-name">Password:</div>
+<div id="login-box-field">
+<input name="password" type="password" class="form-login" title="Password" value="" size="30" maxlength="48" />
+</div>
+
+<br />
+
+<span class="login-box-options">
+New User?  <a href="register.jsp" style="margin-left:30px;">Register Here</a>
+</span>
+<br />
+<br />
+<input style="margin-left:100px;" type="submit" value="Login"/>
+</div>
+</div>
+
 </form>
+
 </body>
 </html>

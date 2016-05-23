@@ -116,4 +116,13 @@ public class UserService implements iUserService {
         }
         return user;
     }
+
+    public boolean authenticateUser(String login, String password) {
+        User user = getByLogin(login);
+        if(user!=null && user.getLogin().equals(login) && user.getPassword().equals(password)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
