@@ -23,25 +23,23 @@
             <th>LOGIN</th>
             <th>PASSWORD</th>
             <th>EMAIL</th>
-            <th>CREDITS</th>
             <th>STATUS</th>
 
         </tr>
         <c:forEach items="${user}" var="user">
             <tr>
-                <td>${user.getUSER_ID()}</td>
-                <td>${user.getFIRST_NAME()}</td>
-                <td>${user.getSECOND_NAME()}</td>
-                <td>${user.getLOGIN()}</td>
-                <td>${user.getPASSWORD()}</td>
-                <td>${user.getEMAIL()}</td>
-                <td>${user.getCREDITS()}</td>
-                <td>${user.getSTATUS()}</td>
+                <td>${user.getId()}</td>
+                <td>${user.getFirstName()}</td>
+                <td>${user.getSecondName()}</td>
+                <td>${user.getLogin()}</td>
+                <td>${user.getPassword()}</td>
+                <td>${user.getEmail()}</td>
+                <td>${user.getStatus()}</td>
 
                 <td><a
-                        href="Controller?action=editUser&userID=<c:out value ="${user.getUSER_ID()}"/>">Edit</a></td>
+                        href="Controller?action=editUser&userID=<c:out value ="${user.getId()}"/>">Edit</a></td>
                 <td><a
-                        href="Controller?action=removeUser&userID=<c:out value ="${user.getUSER_ID()}"/>">Delete</a>
+                        href="Controller?action=removeUser&userID=<c:out value ="${user.getId()}"/>">Delete</a>
                 </td>
             </tr>
         </c:forEach>
@@ -63,16 +61,16 @@
         </tr>
         <c:forEach items="${meal}" var="meal">
             <tr>
-                <td>${meal.getMeal_ID()}</td>
-                <td>${meal.getMeal_NAME()}</td>
-                <td>${meal.getMeal_PRICE()}</td>
-                <td>${meal.getMeal_TIME()}</td>
-                <td>${meal.getMeal_CONSIST()}</td>
+                <td>${meal.id}</td>
+                <td>${meal.mealName}</td>
+                <td>${meal.mealPrice}</td>
+                <td>${meal.mealTime}</td>
+                <td>${meal.mealConsist}</td>
 
                 <td><a
-                        href="Controller?action=editMeal&mealID=<c:out value ="${meal.getMeal_ID()}"/>">Edit</a></td>
+                        href="Controller?action=editMeal&mealID=<c:out value ="${meal.getId()}"/>">Edit</a></td>
                 <td><a
-                        href="Controller?action=removeMeal&mealID=<c:out value ="${meal.getMeal_ID()}"/>">Delete</a>
+                        href="Controller?action=removeMeal&mealID=<c:out value ="${meal.getId()}"/>">Delete</a>
                 </td>
             </tr>
         </c:forEach>

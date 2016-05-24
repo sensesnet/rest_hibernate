@@ -5,6 +5,7 @@ import by.restaurantHibernate.DaoExceptions.DaoException;
 import by.restaurantHibernate.iService.iUserService;
 import by.restaurantHibernate.Dao.UserDao;
 import org.apache.log4j.Logger;
+import org.hibernate.Query;
 import org.hibernate.Transaction;
 import by.restaurantHibernate.pojos.User;
 import by.restaurantHibernate.util.HibernateUtil;
@@ -104,9 +105,10 @@ public class UserService implements iUserService {
     public User getByLogin(String login) {
         Transaction transaction = null;
         User user = null;
+
         try {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            user =  userDao.getByLogin(login);
+            user = userDao.getByLogin(login);
             logger.info(" - Object user was get by login ");
             transaction.commit();
         } catch (Exception e) {
@@ -119,9 +121,9 @@ public class UserService implements iUserService {
 
     public boolean authenticateUser(String login, String password) {
         User user = getByLogin(login);
-        if(user!=null && user.getLogin().equals(login) && user.getPassword().equals(password)){
+        if (user != null && user.getLogin().equals(login) && user.getPassword().equals(password)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

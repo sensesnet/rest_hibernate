@@ -57,6 +57,7 @@ public class BaseDao<T> implements Dao<T> {
     public List<T> getAll() throws SQLException, DaoException {
 
         List<T> list = null;
+        String cl = getPersistentClass().getSimpleName();
         String hql = "FROM " + getPersistentClass().getSimpleName();
         try {
             session = hibernateUtil.getSession();

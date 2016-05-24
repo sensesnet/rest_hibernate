@@ -13,19 +13,19 @@ import java.util.List;
 /**
  * Created by KIRILL on 08.05.2016.
  */
-public class OrderDao extends BaseDao {
+public class OrderDao extends BaseDao<Order> {
     @Override
-    public void add(Object o) throws SQLException, DaoException {
-        super.add(o);
+    public void add(Order order) throws SQLException, DaoException {
+        super.add(order);
     }
 
     @Override
-    public void remove(Object o) throws SQLException, DaoException {
-        super.remove(o);
+    public void remove(Order order) throws SQLException, DaoException {
+        super.remove(order);
     }
 
     @Override
-    public Object getById(Serializable id) throws SQLException, DaoException {
+    public Order getById(Serializable id) throws SQLException, DaoException {
         return super.getById(id);
     }
 
@@ -35,8 +35,8 @@ public class OrderDao extends BaseDao {
     }
 
     @Override
-    public void edit(Object o) throws SQLException, DaoException {
-        super.edit(o);
+    public void edit(Order order) throws SQLException, DaoException {
+        super.edit(order);
     }
 
     public List getByIdList(int id) throws SQLException {

@@ -1,6 +1,7 @@
 package by.restaurantHibernate.Dao;
 
 import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.pojos.UserDetail;
 
 import java.io.Serializable;
 import java.sql.SQLException;
@@ -9,19 +10,19 @@ import java.util.List;
 /**
  * Created by KIRILL on 15.05.2016.
  */
-public class UserDetailDao extends BaseDao {
+public class UserDetailDao extends BaseDao<UserDetail> {
     @Override
-    public void add(Object o) throws SQLException, DaoException {
+    public void add(UserDetail o) throws SQLException, DaoException {
         super.add(o);
     }
 
     @Override
-    public void remove(Object o) throws SQLException, DaoException {
+    public void remove(UserDetail o) throws SQLException, DaoException {
         super.remove(o);
     }
 
     @Override
-    public Object getById(Serializable id) throws SQLException, DaoException {
+    public UserDetail getById(Serializable id) throws SQLException, DaoException {
         return super.getById(id);
     }
 
@@ -31,7 +32,7 @@ public class UserDetailDao extends BaseDao {
     }
 
     @Override
-    public void edit(Object o) throws SQLException, DaoException {
+    public void edit(UserDetail o) throws SQLException, DaoException {
         super.edit(o);
     }
 }

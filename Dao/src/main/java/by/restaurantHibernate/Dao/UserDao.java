@@ -3,6 +3,7 @@ package by.restaurantHibernate.Dao;
 import by.restaurantHibernate.DaoExceptions.DaoException;
 import by.restaurantHibernate.pojos.User;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -13,20 +14,20 @@ import java.util.List;
 /**
  * Created by KIRILL on 08.05.2016.
  */
-public class UserDao extends BaseDao {
+public class UserDao extends BaseDao<User> {
 
     @Override
-    public void add(Object o) throws SQLException, DaoException {
-        super.add(o);
+    public void add(User user) throws SQLException, DaoException {
+        super.add(user);
     }
 
     @Override
-    public void remove(Object o) throws SQLException, DaoException {
-        super.remove(o);
+    public void remove(User user) throws SQLException, DaoException {
+        super.remove(user);
     }
 
     @Override
-    public Object getById(Serializable id) throws SQLException, DaoException {
+    public User getById(Serializable id) throws SQLException, DaoException {
         return super.getById(id);
     }
 
@@ -36,8 +37,8 @@ public class UserDao extends BaseDao {
     }
 
     @Override
-    public void edit(Object o) throws SQLException, DaoException {
-        super.edit(o);
+    public void edit(User user) throws SQLException, DaoException {
+        super.edit(user);
     }
 
 
@@ -49,9 +50,8 @@ public class UserDao extends BaseDao {
      */
     public User getByLogin(String login) {
         Session session = hibernateUtil.getSession();
-        Criteria criteria = session.createCriteria(User.class);
-        criteria.add(Restrictions.eq("login", login));
-        User user = (User) criteria.uniqueResult();
+        Query query = session.createQuery("from User where login='" + login + "'");
+        User user = (User) query.uniqueResult();
 
         return user;
 
