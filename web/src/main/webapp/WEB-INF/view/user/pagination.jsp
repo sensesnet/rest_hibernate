@@ -9,9 +9,9 @@
 </head>
 <body>
 
-<h1 align="center">Welcome to admin page.</h1>
+<h1 align="center">Pagination admin page.</h1>
 <p align="center"><a href="Controller?action=closeSessionCommand">Log out</a></p>
-
+<p align="center"><a href="Controller?action=showAllUser">Go back to admin page</a></p>
 
 <form action="Controller">
     <h2 align="center">List of User</h2>
@@ -44,7 +44,24 @@
             </tr>
         </c:forEach>
     </table>
-    <p align="center"><a href="Controller?action=addUserFormCommand">Add new User</a></p>
+</form>
+<br>
+
+<form action="Controller">
+<table border="1" align="center">
+    <tr>
+    <c:forEach  items="${pageNumber}" var="pageNumber">
+        <td><a href="Controller?action=paginationClick&number=<c:out value ="${pageNumber}"/>">${pageNumber}</a></td>
+    </c:forEach>
+    </tr>
+</table>
+  </form>
+
+
+
+
+
+
 </form>
 
 </body>

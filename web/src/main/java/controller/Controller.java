@@ -8,6 +8,8 @@ import command.OrderCommand.*;
 import command.UserCommand.*;
 import command.iCommand.iCommand;
 import by.restaurantHibernate.pojos.User;
+import command.pagination.paginationClick;
+import command.pagination.paginationUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -74,6 +76,10 @@ public class Controller extends HttpServlet {
                 com = new CloseSessionCommand();
             } else if (action.equalsIgnoreCase("addUserFormCommand")) {
                 com = new ShowAddUserForm();
+            } else if (action.equalsIgnoreCase("paginationUser")) {
+                com = new paginationUser();
+            } else if (action.equalsIgnoreCase("paginationClick")) {
+                com = new paginationClick();
             }
 
             //work with meal form and table

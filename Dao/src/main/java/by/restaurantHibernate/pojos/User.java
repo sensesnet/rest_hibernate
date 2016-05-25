@@ -8,8 +8,8 @@ import javax.persistence.*;
  * Created by KIRILL on 08.05.2016.
  */
 @Entity                   //  annotation describe DB table how javaclass
-//@Table(name = "USER")       //  table name
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@Table(name = "USER")       //  table name
+//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class User {
 
     @Id

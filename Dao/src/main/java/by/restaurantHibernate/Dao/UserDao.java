@@ -3,6 +3,7 @@ package by.restaurantHibernate.Dao;
 import by.restaurantHibernate.DaoExceptions.DaoException;
 import by.restaurantHibernate.pojos.User;
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -56,5 +57,19 @@ public class UserDao extends BaseDao<User> {
         return user;
 
 
+    }
+
+    public List pagination(int first, int last) throws DaoException {
+        List<User> list = null;
+        try {
+            Session session = hibernateUtil.getSession();
+            Query query = session.createQuery("from User");
+            query.setFirstResult(first);
+            query.setMaxResults(last);
+            list = query.list();
+        } catch (HibernateException e) {
+            throw new DaoException(e);
+        }
+        return list;
     }
 }

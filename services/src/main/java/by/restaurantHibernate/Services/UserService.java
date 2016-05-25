@@ -127,4 +127,22 @@ public class UserService implements iUserService {
             return false;
         }
     }
+
+
+    public List pagination(int first, int last) throws SQLException {
+
+        Transaction transaction = null;
+        List users = new ArrayList();
+        try {
+            transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
+            users = userDao.pagination(first,last);
+            logger.info(" - Object users get all: ");
+            transaction.commit();
+        } catch (Exception e) {
+            logger.error(" - Object users wasn't get all: ", e);
+            transaction.rollback();
+            new DaoException(e);
+        }
+        return users;
+    }
 }

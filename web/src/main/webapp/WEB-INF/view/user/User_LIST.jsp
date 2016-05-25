@@ -11,7 +11,7 @@
 
 <h1 align="center">Welcome to admin page.</h1>
 <p align="center"><a href="Controller?action=closeSessionCommand">Log out</a></p>
-
+<p align="center"><a href="Controller?action=paginationUser">Pagination User List</a></p>
 
 <form action="Controller">
     <h2 align="center">List of User</h2>
