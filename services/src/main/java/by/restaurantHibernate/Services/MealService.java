@@ -4,6 +4,7 @@ import by.restaurantHibernate.Dao.Factory;
 import by.restaurantHibernate.Dao.MealDao;
 import by.restaurantHibernate.DaoExceptions.DaoException;
 import by.restaurantHibernate.iService.iMealService;
+import by.restaurantHibernate.pojos.Order;
 import org.hibernate.Transaction;
 import by.restaurantHibernate.pojos.Meal;
 import by.restaurantHibernate.util.HibernateUtil;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.log4j.Logger;
 
 /**
@@ -29,7 +31,7 @@ public class MealService implements iMealService {
         List meals = new ArrayList();
         try {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            meals =  mealDao.getAll();
+            meals = mealDao.getAll();
             logger.info(" - Object meals get all: ");
             transaction.commit();
         } catch (Exception e) {
@@ -37,7 +39,7 @@ public class MealService implements iMealService {
             transaction.rollback();
             new DaoException(e);
         }
-         return meals;
+        return meals;
     }
 
     @Override
@@ -102,8 +104,26 @@ public class MealService implements iMealService {
         return meal;
     }
 
-    public int getTotalPrice(List orderBean) {return 100;}
-    public int getTotalTime(List orderBean) {
-        return 200;
+    public int getTotalPrice(List orderBean) throws SQLException, DaoException {
+
+        int sum = 0;
+
+        for (int i = 0; i < orderBean.size(); i++) {
+            Order order = (Order) orderBean.get(i);
+            int s = mealDao.getById(order.getMealId()).getMealPrice();
+            sum = sum+s;
+        }
+        return sum;
+    }
+
+    public int getTotalTime(List orderBean) throws SQLException, DaoException {
+        int time = 0;
+
+        for (int i = 0; i < orderBean.size(); i++) {
+            Order order = (Order) orderBean.get(i);
+            int s = mealDao.getById(order.getMealId()).getMealTime();
+            time = time+s;
+        }
+        return time;
     }
 }

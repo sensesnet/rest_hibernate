@@ -27,8 +27,10 @@ public class SendMealToAdminCommand implements iCommand {
         int ordId = Integer.valueOf(request.getParameter("orderID"));
         orderStatus.setOrderId(ordId);
 
-//        int price = Integer.valueOf(request.getParameter("price"));
-//        orderStatus.setTotalPrice(price);
+        int price = Integer.valueOf(request.getParameter("price"));
+        orderStatus.setTotalPrice(price);
+        int time = Integer.valueOf(request.getParameter("time"));
+        orderStatus.setTotalTime(time);
 
         orderStatus.setOrderStatus("to admin");
         orderStatusService.add(orderStatus);

@@ -53,7 +53,7 @@ public class OrderDao extends BaseDao<Order> {
             e.printStackTrace();
         }
 
-        hibernateUtil.closeSession(session);
+       //hibernateUtil.closeSession(session);
         return result;
     }
 

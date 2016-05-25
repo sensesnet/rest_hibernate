@@ -1,6 +1,7 @@
 package command.OrderCommand;
 
 
+import by.restaurantHibernate.DaoExceptions.DaoException;
 import by.restaurantHibernate.Services.MealService;
 import by.restaurantHibernate.Services.OrderService;
 import command.iCommand.iCommand;
@@ -63,6 +64,8 @@ public class AddMealToOrderList implements iCommand {
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (DaoException e) {
             e.printStackTrace();
         }
 
