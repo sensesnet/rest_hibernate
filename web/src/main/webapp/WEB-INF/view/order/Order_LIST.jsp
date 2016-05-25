@@ -13,20 +13,24 @@
     <h2>Orders STATUS</h2>
     <table border="1">
         <tr>
+            <th>Id</th>
             <th>Order Id</th>
             <th>Total Price</th>
+            <th>Total Time</th>
             <th>Order Status</th>
 
         </tr>
         <c:forEach items="${orderStatus}" var="orderStatus">
             <tr>
-                <td>${orderStatus.getOrder_ID()}</td>
-                <td>${orderStatus.getOrder_Price()}</td>
-                <td>${orderStatus.getOrder_Status()}</td>
+                <td>${orderStatus.id}</td>
+                <td>${orderStatus.orderId}</td>
+                <td>${orderStatus.totalPrice}</td>
+                <td>${orderStatus.totalTime}</td>
+                <td>${orderStatus.orderStatus}</td>
                 <td><a
-                        href="Controller?action=sendOrderToCookCommand&orderID=<c:out value ="${orderStatus.getOrder_ID()}"/>">Send order to cook</a></td>
+                        href="Controller?action=sendOrderToCookCommand&orderID=<c:out value ="${orderStatus.getId()}"/>">Send order to cook</a></td>
                 <td><a
-                        href="Controller?action=removeOrderStatusCommand&orderID=<c:out value ="${orderStatus.getOrder_ID()}"/>">Delete</a>
+                        href="Controller?action=removeOrderStatusCommand&orderID=<c:out value ="${orderStatus.getId()}"/>">Delete</a>
                 </td>
             </tr>
         </c:forEach>

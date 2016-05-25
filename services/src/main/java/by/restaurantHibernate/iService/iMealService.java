@@ -19,5 +19,5 @@ public interface iMealService {
 
     void remove(Meal meal) throws SQLException;
 
-    Meal getById(Serializable id) throws SQLException, DaoException;
+    Meal getById(int id) throws SQLException, DaoException;
 }

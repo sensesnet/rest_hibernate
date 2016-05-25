@@ -7,15 +7,15 @@
     <title>Order to admin</title>
 </head>
 <body>
-<h1>Your order will be send to admin. If you need something else try again.</h1>
-<p>USER :${user.FIRST_NAME} _ ${user.SECOND_NAME}</p>
-<p>Order_ID :${orderID}</p>
-<p>Order_summ_with_sale_5% :${priceWithSale} ($)</p>
-<p>Order_time for cook :${TimeToCook} (minutes)</p>
+<h1 align="center">Your order will be send to admin. If you need something else try again.</h1>
+<p align="center">USER :${user.firstName} _ ${user.secondName}</p>
+<p align="center">Order_ID :${orderID}</p>
+<p align="center">Order_summ_with_sale_5% :${priceWithSale} ($)</p>
+<p align="center">Order_time for cook :${TimeToCook} (minutes)</p>
 
 
 
-<p><a href="Controller?action=sendMealToAdminCommand&orderID=${orderID}&price=${priceWithSale}">Confirm order</a></p>
-<p><a href="Controller?action=closeSessionCommand">log out</a></p>
+<p align="center"><a href="Controller?action=sendMealToAdminCommand&orderID=${orderID}&price=${priceWithSale}">Confirm order</a></p>
+<p align="center"><a href="Controller?action=closeSessionCommand">log out</a></p>
 </body>
 </html>

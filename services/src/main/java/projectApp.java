@@ -1,4 +1,7 @@
+import by.restaurantHibernate.DaoExceptions.DaoException;
+import by.restaurantHibernate.Services.MealService;
 import by.restaurantHibernate.Services.UserService;
+import by.restaurantHibernate.pojos.Meal;
 import by.restaurantHibernate.pojos.User;
 
 import java.sql.SQLException;
@@ -8,17 +11,18 @@ import java.sql.SQLException;
  */
 public class projectApp {
 
-//    public static void main(String[] args) throws SQLException, SQLException {
-//        UserService userService = new UserService();
-////        User user = new User();
-////        user.setFirstName("Artem");
-////        user.setSecongName("Degt");
-////        user.setLogin("testService");
-////        user.setPassword("testService");
-//////        user.setEmail("test@service.com");
-////        userService.add(user);
-////        System.out.println("new user add by service"+user);
-//
-//
-//    }
+    public static void main(String[] args) throws SQLException, SQLException, DaoException {
+        MealService mealService = new MealService();
+//        User user = new User();
+//        user.setFirstName("Artem");
+//        user.setSecongName("Degt");
+//        user.setLogin("testService");
+//        user.setPassword("testService");
+//        user.setEmail("test@service.com");
+//        userService.add(user);
+        Meal meal = mealService.getById(25);
+        System.out.println("take meal  by id" + meal);
+
+
+    }
 }

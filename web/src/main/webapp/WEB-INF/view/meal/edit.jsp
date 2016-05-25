@@ -14,23 +14,23 @@
         <tr>
             <td>Meal ID</td>
             <td><input type="text" name="mealId" readonly="readonly"
-                       value="${mealID}"></td>
+                       value="${meal.id}"></td>
         </tr>
         <tr>
             <td>MEAL</td>
-            <td><input type="text" name="mealName" value="${meal.getMeal_NAME()}" /></td>
+            <td><input type="text" name="mealName" value="${meal.mealName}" /></td>
         </tr>
         <tr>
             <td>PRICE</td>
-            <td><input type="text" name="mealPrice" value="${meal.getMeal_PRICE()}" /></td>
+            <td><input type="text" name="mealPrice" value="${meal.mealPrice}" /></td>
         </tr>
         <tr>
             <td>TIME_TO_COOK</td>
-            <td><input type="text" name="mealTime" value="${meal.getMeal_TIME()}" /></td>
+            <td><input type="text" name="mealTime" value="${meal.mealTime}" /></td>
         </tr>
         <tr>
             <td>CONSIST</td>
-            <td><input type="text" name="mealConsist" value="${meal.getMeal_CONSIST()}" /></td>
+            <td><input type="text" name="mealConsist" value="${meal.mealConsist}" /></td>
         </tr>
 
         <tr>

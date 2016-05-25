@@ -23,9 +23,9 @@ public class EditMealCommand implements iCommand {
         String page = "/WEB-INF/view/meal/edit.jsp";
 
         try {
-            int mId = Integer.valueOf(request.getParameter("mealID"));
+            int mId = Integer.valueOf(request.getParameter("mealId"));
             request.setAttribute("meal",mealService.getById(mId));
-            request.setAttribute("mealID",mId);
+            request.setAttribute("mealId",mId);
             RequestDispatcher view = request.getRequestDispatcher(page);
             view.forward(request,response);
 

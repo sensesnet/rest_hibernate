@@ -52,13 +52,13 @@ public class AddMealToOrdercheckboxList implements iCommand {
             request.setAttribute("user", user);
             request.setAttribute("meal", mealService.getAll());
             request.setAttribute("orderID", numOfSession);
-            List orderBean = orderService.getByIdList(numOfSession);
-            int price = mealService.getTotalPrice(orderBean);
-            int timeToCook = mealService.getTotalTime(orderBean);
+            //List orderBean = orderService.getByIdList(numOfSession);
+            //int price = mealService.getTotalPrice(orderBean);
+            //int timeToCook = mealService.getTotalTime(orderBean);
 
-            request.setAttribute("order", orderBean);
-            request.setAttribute("priceWithSale",price);
-            request.setAttribute("TimeToCook",timeToCook);
+            //request.setAttribute("order", orderBean);
+            //request.setAttribute("priceWithSale",price);
+            //request.setAttribute("TimeToCook",timeToCook);
 
 
             dispatcher.forward(request, response);

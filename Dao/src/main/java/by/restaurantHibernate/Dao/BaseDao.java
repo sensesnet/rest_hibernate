@@ -46,6 +46,7 @@ public class BaseDao<T> implements Dao<T> {
         T t = null;
         try {
             session = hibernateUtil.getSession();
+            String cl = getPersistentClass().getSimpleName();
             t = (T) session.load(getPersistentClass(), id);
         } catch (HibernateException e) {
             log.error(" - Error get by id object", e);

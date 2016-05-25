@@ -20,18 +20,18 @@
             <th>Meal_ID</th>
             <th>Meal</th>
             <th>Price</th>
-            <th>Time_to_cook</th>
+            <th>Time_to_COOK</th>
             <th>Consist</th>
 
         </tr>
         <c:forEach items="${meal}" var="meal">
             <tr>
-                <td><input type="checkbox" name="dish" value="${meal.getMeal_ID()}"/></td>
-                <td>${meal.getMeal_ID()}</td>
-                <td>${meal.getMeal_NAME()}</td>
-                <td>${meal.getMeal_PRICE()}</td>
-                <td>${meal.getMeal_TIME()}</td>
-                <td>${meal.getMeal_CONSIST()}</td>
+                <td><input type="checkbox" name="dish" value="${meal.id}"/></td>
+                <td>${meal.id}</td>
+                <td>${meal.mealName}</td>
+                <td>${meal.mealPrice}</td>
+                <td>${meal.mealTime}</td>
+                <td>${meal.mealConsist}</td>
             </tr>
 
         </c:forEach>

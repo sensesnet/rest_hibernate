@@ -38,7 +38,7 @@ public class AddMealToOrderList implements iCommand {
 
 
         order.setUserId(user.getId());
-        order.setMealId(Integer.parseInt(request.getParameter("mealId")));
+        order.setMealId(Integer.parseInt(request.getParameter("mealID")));
         order.setOrderId(numOfSession);
         orderService.add(order);
 

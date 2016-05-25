@@ -47,36 +47,5 @@
     <p align="center"><a href="Controller?action=addUserFormCommand">Add new User</a></p>
 </form>
 
-
-<form action="Controller">
-    <h2 align="center">MENU</h2>
-    <table border="1" align="center">
-        <tr>
-            <th>Id</th>
-            <th>Meal</th>
-            <th>Price</th>
-            <th>Time_to_cook</th>
-            <th>Consist</th>
-
-        </tr>
-        <c:forEach items="${meal}" var="meal">
-            <tr>
-                <td>${meal.id}</td>
-                <td>${meal.mealName}</td>
-                <td>${meal.mealPrice}</td>
-                <td>${meal.mealTime}</td>
-                <td>${meal.mealConsist}</td>
-
-                <td><a
-                        href="Controller?action=editMeal&mealId=<c:out value ="${meal.getId()}"/>">Edit</a></td>
-                <td><a
-                        href="Controller?action=removeMeal&mealID=<c:out value ="${meal.getId()}"/>">Delete</a>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
-    <p align="center"><a href="Controller?action=addMealFormCommand">Add new Meal</a></p>
-</form>
-<p align="center"><a href="Controller?action=showOrderCommand">Show order status</a></p>
 </body>
 </html>

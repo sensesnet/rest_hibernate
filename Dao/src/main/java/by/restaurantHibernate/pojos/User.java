@@ -1,13 +1,15 @@
 package by.restaurantHibernate.pojos;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 
 /**
  * Created by KIRILL on 08.05.2016.
  */
 @Entity                   //  annotation describe DB table how javaclass
-@Table(name = "USER")       //  table name
-
+//@Table(name = "USER")       //  table name
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class User {
 
     @Id
@@ -19,7 +21,7 @@ public class User {
     private String firstName;
 
     @Column(name = "secongName")
-    private String secongName;
+    private String secondName;
 
     @Column(name = "login")
     private String login;
@@ -50,12 +52,12 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getSecongName() {
-        return secongName;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setSecongName(String secongName) {
-        this.secongName = secongName;
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
     public String getLogin() {
@@ -96,7 +98,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
-                ", secongName='" + secongName + '\'' +
+                ", secongName='" + secondName + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +

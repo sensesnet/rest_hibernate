@@ -14,35 +14,31 @@
         <tr>
             <td>User ID</td>
             <td><input type="text" name="userId" readonly="readonly"
-                       value="${userID}"></td>
+                       value="${user.id}"></td>
         </tr>
         <tr>
             <td>First Name</td>
-            <td><input type="text" name="firstName" value="${user.FIRST_NAME}" /></td>
+            <td><input type="text" name="firstName" value="${user.firstName}" /></td>
         </tr>
         <tr>
             <td>Last Name</td>
-            <td><input type="text" name="secondName" value="${user.getSECOND_NAME()}" /></td>
+            <td><input type="text" name="secondName" value="${user.secondName}" /></td>
         </tr>
         <tr>
             <td>Login</td>
-            <td><input type="text" name="login" value="${user.getLOGIN()}" /></td>
+            <td><input type="text" name="login" value="${user.login}" /></td>
         </tr>
         <tr>
             <td>Password</td>
-            <td><input type="text" name="password" value="${user.getPASSWORD()}" /></td>
+            <td><input type="text" name="password" value="${user.password}" /></td>
         </tr>
         <tr>
             <td>Email</td>
-            <td><input type="text" name="email" value="${user.EMAIL}" /></td>
-        </tr>
-        <tr>
-            <td>Credits</td>
-            <td><input type="text" name="credits" value="${user.CREDITS}" /></td>
+            <td><input type="text" name="email" value="${user.email}" /></td>
         </tr>
         <tr>
             <td>Status</td>
-            <td><input type="text" name="status" value="${user.getSTATUS()}" /></td>
+            <td><input type="text" name="status" value="${user.status}" /></td>
         </tr>
 
         <tr>

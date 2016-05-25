@@ -23,7 +23,7 @@ public class AddUserCommand implements iCommand {
 
         User user = new User();
         user.setFirstName(request.getParameter("firstName"));
-        user.setSecongName(request.getParameter("secondName"));
+        user.setSecondName(request.getParameter("secondName"));
         user.setLogin(request.getParameter("login"));
         user.setPassword(request.getParameter("password"));
         user.setEmail(request.getParameter("email"));

@@ -62,7 +62,7 @@ public class MealService implements iMealService {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
             mealDao.edit(meal);
             logger.info(" - Object meal was edit: " + meal);
-
+            transaction.commit();
         } catch (Exception e) {
             logger.error(" - Object meal wasn't edit: ", e);
             transaction.rollback();
@@ -77,7 +77,7 @@ public class MealService implements iMealService {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
             mealDao.remove(meal);
             logger.info(" - Object meal was edit: " + meal);
-
+            transaction.commit();
         } catch (Exception e) {
             logger.error(" - Object meal wasn't remove: ", e);
             transaction.rollback();
@@ -86,17 +86,23 @@ public class MealService implements iMealService {
     }
 
     @Override
-    public Meal getById(Serializable id) throws SQLException, DaoException {
-        Transaction transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-        Meal meal = (Meal) mealDao.getById(id);
-        transaction.commit();
+    public Meal getById(int id) throws SQLException, DaoException {
+        Transaction transaction = null;
+        Meal meal = null;
+        try {
+            transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
+            meal = (Meal) mealDao.getById(id);
+            logger.info(" - Object meal was get by id ");
+            transaction.commit();
+        } catch (Exception e) {
+            logger.error(" - Object meal wasn't get by id: ", e);
+            transaction.rollback();
+            new DaoException(e);
+        }
         return meal;
     }
 
-    public int getTotalPrice(List orderBean) {
-        return 100;
-    }
-
+    public int getTotalPrice(List orderBean) {return 100;}
     public int getTotalTime(List orderBean) {
         return 200;
     }

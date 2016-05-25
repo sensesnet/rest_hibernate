@@ -25,14 +25,14 @@
         </tr>
         <c:forEach items="${meal}" var="meal">
             <tr>
-                <td><input type="radio" name="dish" value="${meal.getMeal_ID()}">
-                <td>${meal.getMeal_ID()}</td>
-                <td>${meal.getMeal_NAME()}</td>
-                <td>${meal.getMeal_PRICE()}</td>
-                <td>${meal.getMeal_TIME()}</td>
-                <td>${meal.getMeal_CONSIST()}</td>
+                <td><input type="radio" name="dish" value="${meal.id}">
+                <td>${meal.id}</td>
+                <td>${meal.mealName}</td>
+                <td>${meal.mealPrice}</td>
+                <td>${meal.mealTime}</td>
+                <td>${meal.mealConsist}</td>
                 <td>
-                    <a href="Controller?action=addMealToOrderList&mealID=<c:out value ="${meal.getMeal_ID()}"/>">AddToOrder</a>
+                    <a href="Controller?action=addMealToOrderList&mealID=<c:out value ="${meal.getId()}"/>">AddToOrder</a>
                 </td>
                 </input></td>
             </tr>

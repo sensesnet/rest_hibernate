@@ -30,7 +30,7 @@ public class EditUserSaveCommand implements iCommand {
         user.setId(uId);
         String firstName = request.getParameter("firstName");
         user.setFirstName(firstName);
-        user.setSecongName(request.getParameter("secondName"));
+        user.setSecondName(request.getParameter("secondName"));
         user.setLogin(request.getParameter("login"));
         user.setPassword(request.getParameter("password"));
         user.setEmail(request.getParameter("email"));

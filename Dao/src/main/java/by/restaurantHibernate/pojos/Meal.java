@@ -1,12 +1,15 @@
 package by.restaurantHibernate.pojos;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 
 /**
  * Created by KIRILL on 08.05.2016.
  */
 @Entity                   //  annotation describe DB table how javaclass
-@Table(name = "MEAL")       //  table name
+//@Table(name = "MEAL")       //  table name
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Meal {
 
     @Id
@@ -64,5 +67,16 @@ public class Meal {
 
     public void setMealConsist(String mealConsist) {
         this.mealConsist = mealConsist;
+    }
+
+    @Override
+    public String toString() {
+        return "Meal{" +
+                "id=" + id +
+                ", mealName='" + mealName + '\'' +
+                ", mealPrice=" + mealPrice +
+                ", mealTime=" + mealTime +
+                ", mealConsist='" + mealConsist + '\'' +
+                '}';
     }
 }
