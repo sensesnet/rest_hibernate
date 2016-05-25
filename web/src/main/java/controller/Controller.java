@@ -80,6 +80,8 @@ public class Controller extends HttpServlet {
                 com = new paginationUser();
             } else if (action.equalsIgnoreCase("paginationClick")) {
                 com = new paginationClick();
+            } else if (action.equalsIgnoreCase("lookOrderAdminCommand")) {
+                com = new LookOrderCommand();
             }
 
             //work with meal form and table

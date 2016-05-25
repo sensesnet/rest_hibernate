@@ -32,6 +32,9 @@
                 <td><a
                         href="Controller?action=removeOrderStatusCommand&orderID=<c:out value ="${orderStatus.getId()}"/>">Delete</a>
                 </td>
+                <td><a
+                        href="Controller?action=lookOrderAdminCommand&orderID=<c:out value ="${orderStatus.getOrderId()}"/>">Look Order</a>
+                </td>
             </tr>
         </c:forEach>
     </table>
