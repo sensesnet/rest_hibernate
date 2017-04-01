@@ -4,17 +4,15 @@ import by.restaurantHibernate.Dao.Factory;
 import by.restaurantHibernate.Dao.MealDao;
 import by.restaurantHibernate.DaoExceptions.DaoException;
 import by.restaurantHibernate.iService.iMealService;
-import by.restaurantHibernate.pojos.Order;
-import org.hibernate.Transaction;
 import by.restaurantHibernate.pojos.Meal;
+import by.restaurantHibernate.pojos.Order;
 import by.restaurantHibernate.util.HibernateUtil;
+import org.apache.log4j.Logger;
+import org.hibernate.Transaction;
 
-import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.log4j.Logger;
 
 /**
  * Created by KIRILL on 15.05.2016.
@@ -93,7 +91,7 @@ public class MealService implements iMealService {
         Meal meal = null;
         try {
             transaction = HibernateUtil.getHibernateUtil().getSession().beginTransaction();
-            meal = (Meal) mealDao.getById(id);
+            meal = mealDao.getById(id);
             logger.info(" - Object meal was get by id ");
             transaction.commit();
         } catch (Exception e) {
